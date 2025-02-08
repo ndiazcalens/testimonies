@@ -1,0 +1,37 @@
+/*aca se aplican los estilos generales de la app*/
+* {
+  margin: 0px;
+  padding: 0px;    
+}
+
+html,
+body  {
+  font-size: 18px;
+  background-color: #f5f6f7;
+}
+
+h1 {
+  max-width: 940px;
+  font-size: 2.5em; /*em es un tamaño en relacion al bloque que lo contiene*/
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 40px 0; /*margen superior inferior y margen derecho izq*/
+}
+
+.App {
+  min-height: 100vh; /* altura minima, se va a ajustar a la altura del navegador*/
+  display: flex; /*relacionado con flexbox*/
+  flex-wrap: wrap; /*si un elemento toma todo el ancho del contenedor, los otros se van a ubicar en la siguiente linea o abajo*/
+  align-items: center; /*los elementos se van a alinear en el centro*/
+  justify-content: center; /*se van a centrar horizontalmente, con esta propiedad y la anterior, centramos los elementos vertical y horizontalmente*/
+  text-align: center;
+}
+
+.principal-container{
+  min-height: 600px;/*asi dependiendo de la cantidad de testimonios q haya el contenedor se va a adaptar*/
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
