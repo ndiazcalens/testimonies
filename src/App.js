@@ -9,31 +9,23 @@ function App() {
     <div className="App">
       <div className="principal-container">
         <h1>Here is what our alumni say about freeCodeCamp:</h1>
-        <Testimony
-        image={tesData[0].image}
-        name= {tesData[0].name}
-        country= {tesData[0].country}
-        job= {tesData[0].job}
-        company= {tesData[0].company}
-        testimony= {tesData[0].testimony}
-        />
-        <Testimony
-        image={tesData[1].image}
-        name= {tesData[1].name}
-        country= {tesData[1].country}
-        job= {tesData[1].job}
-        company= {tesData[1].company}
-        testimony= {tesData[1].testimony}
-        />
-        <Testimony
-        image={tesData[2].image}
-        name= {tesData[2].name}
-        country= {tesData[2].country}
-        job= {tesData[2].job}
-        company= {tesData[2].company}
-        testimony= {tesData[2].testimony}
-        />
-      </div>  
+
+        {/* Usando map, conseguimos el mismo resultado pero invocando 1 sola vez el componente <Testimony />, y no tenemos que indicarle manualmente el índice del objeto que queremos mostrar en cada caso. */}
+
+        {tesData.map((item, index) => { // "map" es idéntico al "forEach", únicamente que "map" MODIFICA el array original, mientras que "forEach" NO lo hace. En react se usa para renderizar elementos de un array.
+          return (
+            <Testimony
+              key={index} // key es un atributo especial que se necesita para que React pueda identificar de manera única a cada elemento de la lista. Si no se pone, React mostrará un warning en la consola. Es OBLIGATORIO.
+              image={item.image}
+              name={item.name}
+              country={item.country}
+              job={item.job}
+              company={item.company}
+              testimony={item.testimony}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
